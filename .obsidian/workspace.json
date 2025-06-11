@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "self-hosted/ente photos & auth.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "ente photos & auth"
             }
           }
         ]
@@ -168,16 +168,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c6db822c8aa7b624",
+  "active": "1ab81974d7ad308b",
   "lastOpenFiles": [
+    "self-hosted/caddy.md",
+    "self-hosted/ente photos & auth.md",
+    "self-hosted/wireguard on boot.md",
+    "index.md",
     "interesting c++/smart pointers.md",
     "interesting c++/set vs unordered_set.md",
     "interesting c++/concurrency (in the context of C++).md",
     "git branching.md",
-    "index.md",
-    "homelab/wireguard on boot.md",
-    "self-hosted/setting up caddy.md",
-    "self-hosted/Ente Photos & Auth.md",
     "obsidian tricks.md",
     "z. interesting stuff.md",
     "fpga resources.md",
