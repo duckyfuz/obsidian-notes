@@ -30,8 +30,8 @@ jobs:
         run: |
           rm -rf quartz-notes/content
           mv content quartz-notes/content
-          ls
           ls quartz-notes
+          ls quartz-notes/content
 
       - name: set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -43,6 +43,18 @@ jobs:
           driver-opts: |
             image=moby/buildkit:master
             network=host
+
+      - name: Install cosign
+        if: github.event_name != 'pull_request'
+        uses: sigstore/cosign-installer@v3.8.2
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        if: github.event_name != 'pull_request'
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push Docker image
         id: build-and-push
