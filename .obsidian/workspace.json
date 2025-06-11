@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "obsidian tricks.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "obsidian tricks"
+              "title": "index"
             }
           }
         ]
@@ -170,14 +170,21 @@
   },
   "active": "c6db822c8aa7b624",
   "lastOpenFiles": [
-    "z. interesting stuff.md",
+    "interesting c++/smart pointers.md",
+    "interesting c++/set vs unordered_set.md",
+    "interesting c++/concurrency (in the context of C++).md",
+    "git branching.md",
+    "index.md",
+    "homelab/wireguard on boot.md",
+    "self-hosted/setting up caddy.md",
+    "self-hosted/Ente Photos & Auth.md",
     "obsidian tricks.md",
+    "z. interesting stuff.md",
     "fpga resources.md",
     "c++ leetcode stuff.md",
     "speedy python/coroutines (CPython).md",
     "speedy python/coroutines via enhanced generators (PEP 342).md",
     "speedy python/global lnterpreter lock (gil).md",
-    "self-hosted/Ente Photos & Auth.md",
     "opject-oriented programming/RAII (Resource Acquisition Is Initialization) principle.md",
     "object-oriented programming/RAII (Resource Acquisition Is Initialization) principle.md",
     "object-oriented programming",
@@ -186,21 +193,14 @@
     "networking/end-to-end arguments in system design.md",
     "networking/cross-layer design.md",
     "mac setup/developer environment.md",
-    "interesting c++/smart pointers.md",
-    "interesting c++/set vs unordered_set.md",
     "interesting c++/smart pointers cleanup.md",
-    "interesting c++/concurrency (in the context of C++).md",
     "browser/images/Screenshot 2025-02-18 at 08.51.01.png",
     "browser/images/Screenshot 2025-02-18 at 08.50.44.png",
     "browser/images/Screenshot 2025-02-17 at 10.33.41.png",
     "distributed systems/images/Screenshot 2025-03-09 at 21.46.37.png",
     "distributed systems/scalability for dummies.md",
     "distributed systems/RabbitMQ & Kafka.md",
-    "homelab/wireguard on boot.md",
     "databases/PostgreSQL vs MySQL.md",
-    "cybersecurity/multi-factor authenticaion.md",
-    "cs2040c (nus)/a. roadmap.md",
-    "cs2040c (nus)/topics/convex hull.md",
     "cybersecurity",
     "Untitled.canvas",
     "interesting c++/images/Screenshot 2025-03-14 at 14.57.38.png",
