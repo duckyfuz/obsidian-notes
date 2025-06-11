@@ -1,0 +1,63 @@
+name: quartz docker build
+
+on:
+  push:
+    branches: 
+      - main
+  pull_request:
+    branches: 
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout obsidian-notes repository
+        uses: actions/checkout@v4
+        path: content
+
+      - name: checkout quartz-notes repository
+        uses: actions/checkout@v4
+        with:
+          repository: duckyfuz/quartz-notes
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: quartz-notes
+
+      - name: inject content into quartz
+        run: |
+          rm -rf quartz-notes/content
+          mv content quartz-notes/content
+          ls
+          ls quartz-notes
+
+      - name: set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          install: true
+          driver-opts: |
+            image=moby/buildkit:master
+            network=host
+
+      - name: Build and push Docker image
+        id: build-and-push
+        uses: docker/build-push-action@v6
+        with:
+          context: ./quartz-notes
+          push: ${{ github.event_name != 'pull_request' }}  # Only push if not a pull request
+          build-args: |
+            GIT_SHA=${{ env.GITHUB_SHA }}
+            DOCKER_LABEL=sha-${{ env.GITHUB_SHA_SHORT }}
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/quartz-notes:latest
+            ghcr.io/${{ github.repository_owner }}/quartz-notes:sha-${{ env.GITHUB_SHA_SHORT }}
+          labels: |
+            maintainer=${{ github.repository_owner }}
+            org.opencontainers.image.source="https://github.com/${{ github.repository_owner }}/quartz-notes"
+          cache-from: type=gha
+          cache-to: type=gha
+
