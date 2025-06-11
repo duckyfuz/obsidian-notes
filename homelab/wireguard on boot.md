@@ -19,3 +19,7 @@ AllowedIPs = 0.0.0.0/0, ::0/0
 > `sudo systemctl stop wg-quick@wg1.service`
 > `sudo systemctl status wg-quick@wg1.service`
 > `sudo systemctl disable wg-quick@wg1.service`
+
+> [!warning] unable to ssh from the wireguard host to the homelab?
+> might be due to how wireguard handles KeepAlive - wireguard does not inherently maintain an open session, and once traffic stops flowing, the connection is considered idle and may be shut down
+> solution: set `PersistentKeepAlive = 25` (send a keepalive pkt every 25s) under `[Peer]`
