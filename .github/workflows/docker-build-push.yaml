@@ -93,7 +93,7 @@ jobs:
             maintainer=${{ github.repository_owner }}
             org.opencontainers.image.source="https://github.com/${{ github.repository_owner }}/obsidian-notes"
 
-      - name: Build and push Docker image
+      - name: build and push Docker image
         id: build-and-push
         uses: docker/build-push-action@v6
         with:
