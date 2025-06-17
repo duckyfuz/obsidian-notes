@@ -5,11 +5,17 @@
 - sessions need to be stored in a centralized data store which is accessible to all application servers - can be an external DB or an external persistent cache
 
 ### Databases
-- path 1: stick with MySQL - (1) use master-slave replication and upgrade master server by adding more RAM, (2) sharding, (3) denormalization, (4) SQL tuning
+- path 1: stick with MySQL - (1) use master-slave replication and upgrade master server by adding more RAM, (2) [[sharding]], (3) [[denormalization]], (4) [SQL tuning](https://github.com/donnemartin/system-design-primer?tab=readme-ov-file#sql-tuning)
 - path 2: denormalize from the start - no more JOINS
 	- use MySQL like a NoSQL database, or use a easier to scale NoSQL DB
 	- joins will have to be done in the application code
 			- database requests will still get slower after time - need to introduce a cache
+
+>[!tip] further exploration: federation
+>- split up databases by function - eg. forums, users, products
+>- smaller databases have more data that can fit in memory, which results in more cache hits due to improved cache locality
+>- however, federation is not effective if the schema requires large functions or tables
+>	- joining data from two databases is more complicated with a [server link](https://stackoverflow.com/questions/5145637/querying-data-by-joining-two-tables-in-two-database-on-different-servers)
 
 ### Cache
 - with cache, we mean in-memory cache like Redis
