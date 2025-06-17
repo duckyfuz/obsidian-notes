@@ -19,5 +19,5 @@
 - Use OpenID Connect when you need both **authentication** (verifying the user's identity) and **authorization** (granting the user access to resources). It’s often the preferred method for integrating social logins and managing user authentication across multiple services.
 
 >[!tip] OAuth vs. OpenID Connect
-    > - **OAuth** is an **authorization** protocol, meaning it’s used to grant permissions for third-party services to access a user's data.
-    > - **OIDC** extends OAuth to provide **authentication** capabilities, meaning it helps verify the user’s identity and returns identity information like name, email, etc. It is often used in conjunction with OAuth to provide a complete authentication and authorization solution.
+> - **OAuth** is an **authorization** protocol, meaning it’s used to grant permissions for third-party services to access a user's data.
+> - **OIDC** extends OAuth to provide **authentication** capabilities, meaning it helps verify the user’s identity and returns identity information like name, email, etc. It is often used in conjunction with OAuth to provide a complete authentication and authorization solution.
