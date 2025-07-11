@@ -1,7 +1,7 @@
-**Background**
 - these services are considered **message brokers**
 - facilitate communication between different components of a distributed application by allowing for the asynchronous exchange of messages
 - used to scale services - [[scalability for dummies]]
+
 
 ![[Screenshot 2025-03-09 at 21.46.37.png]]
 
@@ -28,7 +28,7 @@
 - RabbitMQ uses "exchanges" - takes in all messages and routes them to different queues
 	- can also duplicate messages, to enable a "fan out" style
 	- consumers have control over what messages they are consuming
-- summary: Kafka is better suited for messages that take uniform (and short) time to process, and for messages that "fan out"
+- **summary**: Kafka is better suited for messages that take uniform (and short) time to process, and for messages that "fan out"
 	- RabbitMQ is better suited for long running (unknown time) tasks, messages with complex routing, and sporadic / bursty data flow
 
 **What about ACKs? What if a Consumer Fails.**
