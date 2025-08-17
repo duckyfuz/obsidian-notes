@@ -11,3 +11,13 @@
 	- time complexities of operations are as expected
 
 no free lunch!!!
+
+>[!tip] but in reality?
+>`std::map` can be (and is often) faster than `std::unordered_map`
+>- with `std::map`, you're comparing keys, which means you only need to compare enough of the beginning of a key to distinguish between the right and left sub-branches
+>	- while with `std::unordered_map`, you need to hash the entire key
+> > [!warning] but is that really true?
+>> only for collections of random strings - if the strings have considerable amounts of prefix-overlap, the rule breaks down
+>- resizing hash tables are also pretty slow
+>- furthermore, how good is the C++ hash function?
+
