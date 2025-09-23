@@ -180,3 +180,9 @@ git config --global alias.lg "log --graph --pretty=tformat:'%Cred%h%Creset -%C(a
 
 vimium options
 ![[Vimium Options.json]]
+
+**nvim config** (`~/.config/nvim/init.vim`)
+```
+set tabstop=4  
+set shiftwidth=4
+```
